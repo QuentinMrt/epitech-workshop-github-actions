@@ -25,9 +25,9 @@ jobs:
     runs-on: macos-latest
     steps:
     - name: Display mac version
-      run: sm_vers -productVersion
+      run: sw_vers -productVersion
   windows:
     runs-on: windows-latest
     steps:
     - name: Display windows version
-      run: echo 10.0.17763
+      run: (Get-ComputerInfo).OsHardwareAbstractionLayer
