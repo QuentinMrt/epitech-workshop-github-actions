@@ -9,7 +9,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  ubuntu:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -21,11 +21,13 @@ jobs:
     # Runs a single command using the runners shell
     - name: Display ubuntu version
       run: echo lsb_release -- version
-    
+  macos:
     runs-on: macos-latest
-      - name: Display mac version
-        run: echo % sm_vers -productVersion
-    
+    steps:
+    - name: Display mac version
+      run: echo % sm_vers -productVersion
+  windows:
     runs-on: windows-latest
-      - name: Display windows version
-        run: echo 10.0.17763
+    steps:
+    - name: Display windows version
+      run: echo 10.0.17763
