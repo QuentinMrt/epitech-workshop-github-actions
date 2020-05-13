@@ -20,12 +20,12 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Display ubuntu version
-      run: echo lsb_release -- version
+      run: lsb_release -rs
   macos:
     runs-on: macos-latest
     steps:
     - name: Display mac version
-      run: echo % sm_vers -productVersion
+      run: sm_vers -productVersion
   windows:
     runs-on: windows-latest
     steps:
