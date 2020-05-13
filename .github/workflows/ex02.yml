@@ -1,0 +1,31 @@
+name: OS
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    # Runs a single command using the runners shell
+    - name: Display ubuntu version
+      run: echo lsb_release -- version
+    
+    runs-on: macos-latest
+      - name: Display mac version
+        run: echo % sm_vers -productVersion
+    
+    runs-on: windows-latest
+      - name: Display windows version
+        run: echo 10.0.17763
