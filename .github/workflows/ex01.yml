@@ -24,7 +24,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
-        run: echo Hello, world! Today is 
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d-%H-%M-%S')"
+        run: echo Hello, world! Today is "$(date +'%Y-%m-%d-%H-%M-%S')"
