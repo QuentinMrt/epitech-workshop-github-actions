@@ -7,8 +7,6 @@ on:
     types: [started]
   push:
     branches: [ master ]
-    paths:
-      -'src/**'
   pull_request:
     branches:
       - master
@@ -24,4 +22,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: display current time
-        run: echo Hello, world! Today is "$(date +'%Y-%m-%d-%H-%M-%S')"
+        run: echo Hello, world! Today is "$(date +'%Y-%m-%d %H:%M:%S')"
